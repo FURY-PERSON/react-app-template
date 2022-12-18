@@ -12,7 +12,6 @@ import AppInner from './AppInner';
 
 function App() {
   console.log('cssVars', cssVars);
-  console.log('gg');
 
   return (
     <div className={styles.app}>
