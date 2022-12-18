@@ -1,0 +1,54 @@
+.message {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: white;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+
+  > .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  > .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+
+  > .textWrapper {
+    margin-left: 16px;
+
+    > .status {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    > .text {
+      font-weight: 400;
+      max-width: 330px;
+      font-size: 14px;
+      line-height: 24px;
+      color: #7E808F;
+      white-space: break-spaces;
+    }
+  }
+}
