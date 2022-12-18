@@ -35,12 +35,13 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off',
+    "react/react-in-jsx-scope": "off",
     'prettier/prettier': [
       'error',
       {
         endOfLine: 'auto',
       },
     ],
-    
+
   },
 };

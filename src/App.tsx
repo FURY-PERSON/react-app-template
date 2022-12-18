@@ -1,12 +1,14 @@
 import { SnackbarProvider } from 'notistack';
-import cssVars from "@constants/var.scss";
-import styles from './App.module.scss';
+import { Provider } from 'react-redux';
+
 import SnackComponent from '@components/snackMessage/snackComponent';
-import NotificationService from '@services/notification';
-import AppInner from './AppInner';
-import { Provider } from "react-redux";
-import { store } from '@store/store';
 import { NotificationProviderOptions } from '@constants/components';
+import cssVars from '@constants/var.scss';
+import NotificationService from '@services/notification';
+import { store } from '@store/store';
+
+import styles from './App.module.scss';
+import AppInner from './AppInner';
 
 function App() {
   console.log('cssVars', cssVars);
@@ -16,13 +18,12 @@ function App() {
       <Provider store={store}>
         <SnackbarProvider
           {...NotificationProviderOptions}
-          content={(key, message) => <SnackComponent id={key} message={message}/>}
-          >
-            <AppInner />
-            
-            {NotificationService.mount()}
-        </SnackbarProvider>
+          content={(key, message) => <SnackComponent id={key} message={message} />}
+        >
+          <AppInner />
 
+          {NotificationService.mount()}
+        </SnackbarProvider>
       </Provider>
     </div>
   );

@@ -1,11 +1,12 @@
-import axios, {AxiosRequestConfig} from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
+
 import AuthController from './controllers/authController';
 
 const URL = process.env.REACT_APP_API_URL;
 
 export const api = axios.create({
   withCredentials: false,
-  baseURL: URL,
+  baseURL: URL
 });
 
 api.interceptors.request.use((config: AxiosRequestConfig) => {
@@ -29,7 +30,7 @@ api.interceptors.response.use(
       const refreshToken = localStorage.getItem('refreshToken');
 
       if (refreshToken) {
-        const response = await AuthController.refreshTokens({refreshToken: 'rrr'});
+        const response = await AuthController.refreshTokens({ refreshToken: 'rrr' });
         if (response) {
           return api.request(originalRequest);
         }

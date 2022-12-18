@@ -1,14 +1,17 @@
-import { useSnackbar, WithSnackbarProps } from 'notistack';
+import { WithSnackbarProps, useSnackbar } from 'notistack';
+
 import SnackbarMessage from '@components/snackMessage/snackbarItem/snackbarMessage';
-import { IBrowserNotificationService } from './notificationService.interface';
 import { SnackStatus } from '@constants/components';
+
+import { IBrowserNotificationService } from './notificationService.interface';
 
 class SnackNotification implements IBrowserNotificationService {
   static instance?: SnackNotification;
+
   private useSnackbarRef?: WithSnackbarProps;
 
   constructor() {
-    if(!SnackNotification.instance) {
+    if (!SnackNotification.instance) {
       SnackNotification.instance = this;
     }
   }
@@ -17,7 +20,7 @@ class SnackNotification implements IBrowserNotificationService {
     const Notificator: React.FC = () => {
       this.useSnackbarRef = useSnackbar();
       return null;
-    }
+    };
 
     return <Notificator />;
   }
@@ -25,19 +28,24 @@ class SnackNotification implements IBrowserNotificationService {
   success(msg: string) {
     this.getInstance().addNotification(msg, SnackStatus.SUCCESS);
   }
+
   warning(msg: string) {
     this.getInstance().addNotification(msg, SnackStatus.WARNUNG);
   }
+
   error(msg: string) {
     this.getInstance().addNotification(msg, SnackStatus.ERROR);
   }
 
   private addNotification(msg: string, status: SnackStatus) {
-    this.getInstance().useSnackbarRef?.enqueueSnackbar(SnackbarMessage({status: status, message: msg}), {preventDuplicate: true});
+    this.getInstance().useSnackbarRef?.enqueueSnackbar(
+      SnackbarMessage({ status: status, message: msg }),
+      { preventDuplicate: true }
+    );
   }
 
   private getInstance() {
-    if(!SnackNotification.instance) {
+    if (!SnackNotification.instance) {
       SnackNotification.instance = this;
     }
 

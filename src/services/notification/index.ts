@@ -1,5 +1,5 @@
-import { IBrowserNotificationService } from "./notificationService.interface";
-import SnackNotification from "./snackNotification";
+import { IBrowserNotificationService } from './notificationService.interface';
+import SnackNotification from './snackNotification';
 
 const NotificationService: IBrowserNotificationService = new SnackNotification();
 

@@ -1,16 +1,16 @@
 export interface ILogInRequest {
-  email: string,
-  password: string
+  email: string;
+  password: string;
 }
 export interface ILogInResponse {
-  refreshToken: string,
-  accessToken: string
+  refreshToken: string;
+  accessToken: string;
 }
 
 export interface IRefreshRequest {
-  refreshToken: string
+  refreshToken: string;
 }
 export interface IRefreshResponse {
-  refreshToken: string,
-  accessToken: string
+  refreshToken: string;
+  accessToken: string;
 }

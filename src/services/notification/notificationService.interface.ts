@@ -5,5 +5,5 @@ export interface INotificationService {
 }
 
 export interface IBrowserNotificationService extends INotificationService {
-  mount: () => JSX.Element
+  mount: () => JSX.Element;
 }
