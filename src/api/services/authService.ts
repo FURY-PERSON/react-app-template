@@ -1,6 +1,11 @@
 import { api } from '@api/index';
-import { ILogInRequest, ILogInResponse, IRefreshRequest, IRefreshResponse } from "@models/authModels";
-import ReqError from "@api/reqError";
+import ReqError from '@api/reqError';
+import {
+  ILogInRequest,
+  ILogInResponse,
+  IRefreshRequest,
+  IRefreshResponse
+} from '@models/authModels';
 
 export default class AuthService {
   static async login(body: ILogInRequest) {
@@ -9,7 +14,7 @@ export default class AuthService {
 
       return response;
     } catch (e: any) {
-      throw ReqError.loginError(e.response)
+      throw ReqError.loginError(e.response);
     }
   }
 
@@ -19,8 +24,7 @@ export default class AuthService {
 
       return response;
     } catch (e: any) {
-      throw ReqError.refreshTokenError(e.response)
+      throw ReqError.refreshTokenError(e.response);
     }
   }
-
 }
