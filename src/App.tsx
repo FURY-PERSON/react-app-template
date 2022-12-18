@@ -12,14 +12,14 @@ import AppInner from './AppInner';
 
 function App() {
   console.log('cssVars', cssVars);
+  console.log('gg');
 
   return (
     <div className={styles.app}>
       <Provider store={store}>
         <SnackbarProvider
           {...NotificationProviderOptions}
-          content={(key, message) => <SnackComponent id={key} message={message} />}
-        >
+          content={(key, message) => <SnackComponent id={key} message={message} />}>
           <AppInner />
 
           {NotificationService.mount()}
