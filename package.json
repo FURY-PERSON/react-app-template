@@ -35,6 +35,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.2",
     "prettier": "^2.8.1",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1",
@@ -48,7 +49,8 @@
     "eject": "react-app-rewired eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint: check": "eslint src/**/*.ts{,x}",
-    "lint: fix": "eslint --fix src/**/*.ts{,x}"
+    "lint: fix": "eslint --fix src/**/*.ts{,x}",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [

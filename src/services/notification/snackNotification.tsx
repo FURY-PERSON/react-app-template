@@ -7,7 +7,6 @@ import { IBrowserNotificationService } from './notificationService.interface';
 
 class SnackNotification implements IBrowserNotificationService {
   static instance?: SnackNotification;
-
   private useSnackbarRef?: WithSnackbarProps;
 
   constructor() {
