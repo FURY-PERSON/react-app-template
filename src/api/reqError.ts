@@ -20,6 +20,11 @@ export default class ReqError extends Error {
     NotificationService.error(error.data.message);
     return error.data.message ? new ReqError(error.data.statusCode, error.data.message) : error;
   }
+
+  static getUsersError(error: ErrorFromService) {
+    NotificationService.error(error?.data?.message);
+    return error?.data?.message ? new ReqError(222, 'aaaaa') : error;
+  }
 }
 
 interface ErrorFromService {

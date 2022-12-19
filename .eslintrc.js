@@ -1,47 +1,50 @@
 module.exports = {
   settings: {
-    "import/resolver": {
-      "typescript": {}
+    'import/resolver': {
+      typescript: {}
     }
   },
-  extends: [
-    'airbnb-typescript/base',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended',
-    "prettier"
-  ],
+  extends: process.env.DISABLE_ESLINT_PLUGIN
+    ? []
+    : [
+        'airbnb-typescript/base',
+        'airbnb/hooks',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:jest/recommended',
+        'plugin:prettier/recommended',
+        'prettier'
+      ],
   plugins: ['react', '@typescript-eslint', 'jest', 'import'],
   env: {
     browser: true,
     es6: true,
-    jest: true,
+    jest: true
   },
   root: true,
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    tsconfigRootDir: "./",
+    tsconfigRootDir: './',
     ecmaVersion: 2018,
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: './tsconfig.json'
   },
-  rules: {
-    'linebreak-style': 'off',
-    "react/react-in-jsx-scope": "off",
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-
-  },
+  rules: process.env.DISABLE_ESLINT_PLUGIN
+    ? {}
+    : {
+        'linebreak-style': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'prettier/prettier': [
+          'error',
+          {
+            endOfLine: 'auto'
+          }
+        ]
+      }
 };

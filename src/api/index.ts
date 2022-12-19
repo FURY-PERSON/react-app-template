@@ -2,7 +2,8 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import AuthController from './controllers/authController';
 
-const URL = process.env.REACT_APP_API_URL;
+/* export const URL = process.env.REACT_APP_API_URL; */
+export const URL = 'https://jsonplaceholder.typicode.com/';
 
 export const api = axios.create({
   withCredentials: false,
